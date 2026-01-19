@@ -10,8 +10,11 @@ Welcome to the **Deepfake Detector**, a state-of-the-art forensic tool designed 
 
 - **🖼️ Multi-Modal Analysis**: Seamlessly handle both high-resolution images and multi-frame video files.
 - **⚡ Fast-API Powered**: Migrated to a modern, asynchronous backend for lightning-fast inference and type safety.
-- **💾 0-Disk Footprint**: Advanced in-memory processing ensures your uploads, heatmaps, and reports never touch the local disk.
+- **👁️ Instant Preview**: Immediate visual feedback for uploaded media before analysis.
+- **🧠 Smart Aggregation**: Uses an intelligent "Top-K Suspicious Frames" logic to pinpoint even brief manipulated segments in longer videos.
+- **💾 Efficient Processing**: In-memory handling ensures fast turnarounds without cluttering local storage.
 - **🔥 Grad-CAM Heatmaps**: Explainable AI (XAI) that visually highlights the exact areas of a face suspected of being manipulated.
+- **📊 Detailed Reporting**: Generate professional PDF or JSON reports on the fly, complete with frame-by-the-frame probability tables.
 - **🟢 Real-Time Status**: Dynamic system monitoring in the UI to ensure the detection engine is always ready.
 
 ---
@@ -20,7 +23,7 @@ Welcome to the **Deepfake Detector**, a state-of-the-art forensic tool designed 
 
 | Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Frontend** | React + Vite | Stunning, responsive dashboard with Tailwind CSS. |
+| **Frontend** | React + Vite | Stunning, responsive dashboard with Tailwind CSS & Framer Motion. |
 | **Backend** | FastAPI | High-performance Python 3.11+ web framework. |
 | **Deep Learning** | PyTorch | EfficientNet-B0 backbone for robust feature extraction. |
 | **Computer Vision** | OpenCV | Advanced frame extraction and image processing. |
@@ -39,10 +42,7 @@ graph TD
     E --> F[Inference Engine]
     F --> G[Grad-CAM Generator]
     G --> H[Base64 Heatmaps]
-    H --> B
-    C --> I[Report Generator]
-    I --> J[Streaming PDF/JSON]
-    J --> B
+    H --> B[Frontend Visualization]
 ```
 
 ---
@@ -51,8 +51,8 @@ graph TD
 
 ### 1️⃣ Clone the Repository
 ```powershell
-git clone https://github.com/your-username/Deepfake-Detector.git
-cd Deepfake-Detector
+git clone https://github.com/4yu5h-crtl/Deepfake_Detector.git
+cd Deepfake_Detector
 ```
 
 ### 2️⃣ Setup the Backend
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 python app.py
 ```
 > [!TIP]
-> The backend runs on `http://localhost:5000`. You can explore the interactive API docs at `/docs`.
+> The backend runs on `http://127.0.0.1:5000`. You can explore the interactive API docs at `/docs`.
 
 ### 3️⃣ Setup the Frontend
 ```powershell
@@ -80,7 +80,8 @@ npm run dev
 1. **Upload**: Drop an image or video into the dashboard.
 2. **Detection**: The system extracts faces using `facenet-pytorch`.
 3. **Analysis**: An **EfficientNet-B0** model, fine-tuned on the **FaceForensics++ (FF++)** dataset, analyzes facial texture and artifacts.
-4. **Result**: Get a clear *Real* or *Fake* verdict with a confidence score.
-5. **Visualization**: Review top-K manipulated frames highlighted with Grad-CAM heatmaps.
+4. **Aggregation**: For videos, the system averages the probabilities of the **top 30%** most suspicious frames to catch partial deepfakes.
+5. **Result**: Get a clear *Real* or *Fake* verdict with a confidence score.
+6. **Visualization**: Review manipulated frames highlighted with Grad-CAM heatmaps.
 
 ---
