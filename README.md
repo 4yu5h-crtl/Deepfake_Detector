@@ -1,7 +1,5 @@
 # 🛡️ Deepfake Detector — Multi-Modal Detection System 🔍
 
-![Deepfake Detector Banner](https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=1200&auto=format&fit=crop)
-
 ### 🚀 Advanced AI-Powered Identification of Manipulated Media
 
 Welcome to the **Deepfake Detector**, a state-of-the-art forensic tool designed to identify and visualize digital manipulations in images and videos. Built with a high-performance **FastAPI** backend and a sleek **React** frontend, this system provides real-time analysis and explainable AI insights.
@@ -85,11 +83,5 @@ npm run dev
 3. **Analysis**: An **EfficientNet-B0** model, fine-tuned on the **FaceForensics++ (FF++)** dataset, analyzes facial texture and artifacts.
 4. **Result**: Get a clear *Real* or *Fake* verdict with a confidence score.
 5. **Visualization**: Review top-K manipulated frames highlighted with Grad-CAM heatmaps.
-
----
-
-## ⚖️ Disclaimer
-
-*This tool uses a high-accuracy model trained on the FaceForensics++ dataset. While it performs exceptionally well on standard deepfake techniques (FaceSwap, DeepFake, Face2Face), it is intended for research purposes and should be used as a supplementary forensic tool.*
 
 ---
