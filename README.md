@@ -12,7 +12,6 @@ Welcome to the **Deepfake Detector**, a state-of-the-art forensic tool designed 
 - **⚡ Fast-API Powered**: Migrated to a modern, asynchronous backend for lightning-fast inference and type safety.
 - **💾 0-Disk Footprint**: Advanced in-memory processing ensures your uploads, heatmaps, and reports never touch the local disk.
 - **🔥 Grad-CAM Heatmaps**: Explainable AI (XAI) that visually highlights the exact areas of a face suspected of being manipulated.
-- **📊 Detailed Reporting**: Generate professional PDF or JSON reports on the fly, complete with frame-by-the-frame probability tables.
 - **🟢 Real-Time Status**: Dynamic system monitoring in the UI to ensure the detection engine is always ready.
 
 ---
